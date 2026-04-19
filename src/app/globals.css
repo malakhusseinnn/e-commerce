@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-
+@source "../**/*.{js,ts,jsx,tsx}";
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -116,13 +116,58 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: white;
+  border-radius: 50%;
+  transition:all 0.2s ease-in-out;
+}
+
+.swiper-button-prev .swiper-navigation-icon,
+.swiper-button-next .swiper-navigation-icon {
+  width: 15px !important;
+  height: 15px !important;
+  color: #00C950;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.2);
+}
+
+.swiper-pagination-bullet{
+  background-color: white !important;
+  width: 12px !important;
+  height: 12px !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.swiper-pagination-bullet-active{
+  width: 30px !important;
+  height: 10px;
+  border-radius: 10px !important;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
