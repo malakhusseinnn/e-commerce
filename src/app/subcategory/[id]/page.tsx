@@ -13,7 +13,7 @@ export default async function Subcategory(props: {
   const specificSubcategory = await getSpecificSubcategory(id);
   const allProducts = await getAllProducts(80);
   console.log(allProducts);
-  const products = getSpecificSubcategoryProducts(id);
+  const products = getSpecificSubcategoryProducts();
   function getSpecificSubcategoryProducts() {
     return allProducts?.filter((product) => {
       return product.subcategory[0]._id === id;

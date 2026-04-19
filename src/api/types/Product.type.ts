@@ -28,7 +28,7 @@ export interface CategoryType {
   createdAt: string;
   updatedAt: string;
 }
-export interface  {
+export interface BrandType {
   _id: string;
   name: string;
   slug: string;
