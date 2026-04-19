@@ -252,7 +252,7 @@ export default function Cart() {
                   <div className="border-b-gray-300/50 border-b p-4 flex flex-col gap-4">
                     <div className="flex justify-between items-center">
                       <p className="text-[#4A5565] font-semibold test-sm">
-                        Subtotal ({allResponse.numOfCartItems} items)
+                        Subtotal ({allResponse?.numOfCartItems} items)
                       </p>
                       <p className="text-[#4A5565] font-semibold test-sm">
                         {productDetails.totalCartPrice} EGP

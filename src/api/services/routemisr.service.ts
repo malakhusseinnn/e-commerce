@@ -94,7 +94,7 @@ export async function getAllBrands(): Promise<BrandType[] | null> {
 
 export async function getSpecificBrand(
   id: string,
-): Promise<BrandType[] | null> {
+): Promise<BrandType | null> {
   try {
     const res = await fetch(`https://ecommerce.routemisr.com/api/v1/brands/${id}`);
     const data = await res.json();
@@ -107,7 +107,7 @@ export async function getSpecificBrand(
 
 export async function getSpecificSubcategory(
   id: string,
-): Promise<SubcategoryType[] | null> {
+): Promise<SubcategoryType | null> {
   try {
     const res = await fetch(`https://ecommerce.routemisr.com/api/v1/subcategories/${id}`);
     const data = await res.json();
