@@ -27,7 +27,7 @@ export default function AddBTN({
       setIsLoading(false);
       setNumberOfCartItems(numberOfCartItems + 1);
     } else {
-      toast.error(res.message, {
+      toast.error("Can't add to cart righ now!", {
         position: "top-center",
         duration: 2000,
       });
