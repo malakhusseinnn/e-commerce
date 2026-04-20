@@ -32,7 +32,7 @@ export default function Cart() {
       setCartId(res.cartId);
       setProductDetails(res.data);
       setAllResponse(res);
-    }
+    } 
   }
 
   async function updateCount(id: string, newCount: number, sign: string) {
