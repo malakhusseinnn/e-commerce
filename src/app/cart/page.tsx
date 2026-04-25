@@ -27,7 +27,6 @@ export default function Cart() {
 
   async function getUserCart() {
     const res = await getLoggedUserCart();
-    console.log("CART RESPONSE:", res);
     if (res.status === "success") {
       setCartId(res.cartId);
       setProductDetails(res.data);

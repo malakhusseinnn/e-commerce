@@ -6,6 +6,7 @@ import { Exo } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import MyProvider from "./_components/MyProvider/MyProvider";
 import CartContextProvider from "@/context/cartContext";
+import WishlistContextProvider from "@/context/wishlistContext";
 
 const exo = Exo({
   subsets: ["latin"],
@@ -28,10 +29,12 @@ export default function RootLayout({
       <body className={`${exo.className} antialiased flex flex-col`}>
         <MyProvider>
           <CartContextProvider>
-           <Navbar />
-          {children}
-          <Toaster />
-          <Footer />
+            <WishlistContextProvider>
+              <Navbar />
+              {children}
+              <Toaster />
+              <Footer />
+            </WishlistContextProvider>
           </CartContextProvider>
         </MyProvider>
       </body>

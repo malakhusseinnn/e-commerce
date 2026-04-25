@@ -23,10 +23,12 @@ import FirstNav from "../FirstNav/FirstNav";
 import { signOut, useSession } from "next-auth/react";
 import { FiLogOut } from "react-icons/fi";
 import { CartContext } from "@/context/cartContext";
+import { WishlistContext } from "@/context/wishlistContext";
 
 export default function Navbar() {
   const { data: mySessionData, status } = useSession();
   const { numberOfCartItems, setNumberOfCartItems } = useContext(CartContext);
+  const { numberOfWishlistItems, setNumberOfWishlistItems } = useContext(WishlistContext);
 
   function mySignOut() {
     signOut({ redirect: true, callbackUrl: "/login" });
@@ -152,8 +154,11 @@ export default function Navbar() {
               <NavigationMenuItem>
                 <Link
                   href="/wishlist"
-                  className="flex items-center justify-center hover:bg-[#F3F4F6] rounded-full w-8 h-8 hover:cursor-pointer text-[#6A7282] hover:text-[#16A34A] transition-all"
+                  className="relative flex items-center justify-center hover:bg-[#F3F4F6] rounded-full w-8 h-8 hover:cursor-pointer text-[#6A7282] hover:text-[#16A34A] transition-all"
                 >
+                   {numberOfWishlistItems > 0 ? <div className="bg-[#16A34A] size-4 text-white absolute -top-[1px] -inset-e-0.5 rounded-full font-bold text-[10px] flex justify-center items-center">
+                    {numberOfWishlistItems}
+                  </div>: ""}
                   <FaRegHeart />
                 </Link>
               </NavigationMenuItem>

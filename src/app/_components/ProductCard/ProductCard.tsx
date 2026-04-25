@@ -1,9 +1,9 @@
 import { ProductType } from "@/api/types/Product.type";
-import { Button } from "@base-ui/react";
 import Link from "next/link";
-import { FaRegEye, FaRegHeart, FaStar } from "react-icons/fa";
+import { FaRegEye, FaStar } from "react-icons/fa";
 import { FaArrowsRotate } from "react-icons/fa6";
 import AddBTN from "../AddBTN/AddBTN";
+import AddToWishlistBtn from "../AddToWishlistBtn/AddToWishlistBtn";
 
 export default function ProductCard({ product }: { product: ProductType }) {
   const discount = ((product.price - (product.priceAfterDiscount || 0)) / product.price) * 100;
@@ -52,12 +52,7 @@ export default function ProductCard({ product }: { product: ProductType }) {
           </div>
 
           <div className="flex flex-col gap-2 absolute top-2 inset-e-2">
-            <div
-              className="size-8 rounded-full bg-white shadow-sm flex justify-center items-center text-md text-[#4A5565] hover:text-[#FB2C36] transition-all duration-300 cursor-pointer"
-              title="Add to wishlist"
-            >
-              <FaRegHeart />
-            </div>
+            <AddToWishlistBtn productId = {product._id}/>
             <div className="size-8 rounded-full bg-white shadow-sm flex justify-center items-center text-md text-[#4A5565] hover:text-[#16A34A] transition-all duration-300 cursor-pointer">
               <FaArrowsRotate />
             </div>

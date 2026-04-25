@@ -15,17 +15,21 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { checkoutSchema, checkoutSchemaType } from "@/shemas/authShemas";
 import { FaMoneyBill } from "react-icons/fa6";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { getLoggedUserCart } from "@/actions/cart.actions";
 import { cartData, cartResponseType } from "@/api/types/cart.types";
-import { onlinePayment } from "@/actions/checkout.actions";
+import { onlinePayment, cashPayment } from "@/actions/checkout.actions";
 import { useParams } from "next/navigation";
-
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { CartContext } from "@/context/cartContext";
 export default function checkout() {
   const { id }: { id: string } = useParams();
   const [selected, setSelected] = useState("");
   const [userCart, setUserCart] = useState<null | cartResponseType>(null);
   const [productDetails, setProductDetails] = useState<null | cartData>(null);
+  const router = useRouter();
+  const { numberOfCartItems, setNumberOfCartItems } = useContext(CartContext);
 
   async function getCart() {
     const res = await getLoggedUserCart();
@@ -53,6 +57,22 @@ export default function checkout() {
     const res = await onlinePayment(id, "", data);
     if (res.status === "success") {
       window.location.href = res.session.url;
+    }
+  }
+  async function cash(data: checkoutSchemaType) {
+    const res = await cashPayment(id, data);
+    if (res.status === "success") {
+      toast.success("Order Placed Successfully 💜", {
+        position: "top-center",
+        duration: 2000,
+      });
+      setNumberOfCartItems(0);
+      router.push("/");
+    } else {
+      toast.error("Can not place the order right now! 🚫", {
+        position: "top-center",
+        duration: 2000,
+      });
     }
   }
 
@@ -113,7 +133,9 @@ export default function checkout() {
                   <form
                     id="checkOutForm"
                     className="flex flex-col gap-6 mt-6"
-                    onSubmit={handleSubmit(checkout)}
+                    onSubmit={handleSubmit(
+                      selected === "cash" ? cash : checkout,
+                    )}
                   >
                     <div>
                       <label
@@ -419,8 +441,17 @@ export default function checkout() {
                     form="checkOutForm"
                     className="w-full mt-4 bg-[#16A34A] rounded-xl p-4 cursor-pointer hover:bg-[#158840] transition-all duration-200 text-white flex justify-center items-center font-bold gap-2"
                   >
-                    <FaShieldAlt />
-                    Proceed to Payment
+                    {selected === "cash" ? (
+                      <>
+                        <FaMoneyBill />
+                        Place Order
+                      </>
+                    ) : (
+                      <>
+                        <FaShieldAlt />
+                        Proceed to Payment
+                      </>
+                    )}
                   </button>
                 </div>
               </div>
