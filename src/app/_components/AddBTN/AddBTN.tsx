@@ -27,7 +27,7 @@ export default function AddBTN({
       setIsLoading(false);
       setNumberOfCartItems(numberOfCartItems + 1);
     } else {
-      toast.error("Can't add to cart righ now!", {
+      toast.error("Can't add to cart righ now! Login First 🚫", {
         position: "top-center",
         duration: 2000,
       });

@@ -1,9 +1,10 @@
 import { ProductType } from "@/api/types/Product.type";
 import Link from "next/link";
-import { FaRegEye, FaStar } from "react-icons/fa";
+import { FaRegEye, FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { FaArrowsRotate } from "react-icons/fa6";
 import AddBTN from "../AddBTN/AddBTN";
 import AddToWishlistBtn from "../AddToWishlistBtn/AddToWishlistBtn";
+import StarRating from "../StarRating/StarRating";
 
 export default function ProductCard({ product }: { product: ProductType }) {
   const discount = ((product.price - (product.priceAfterDiscount || 0)) / product.price) * 100;
@@ -19,13 +20,7 @@ export default function ProductCard({ product }: { product: ProductType }) {
             {product.title}
           </h2>
           <div className="flex gap-2 items-center">
-            <div className="flex items-center gap-1 mt-1 text-[#FCC800]">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
+            <StarRating rating={product.ratingsAverage} />
             <div className="flex items-center gap-0.5 mt-1 text-[#6A7282] text-xs">
               <p>{product.ratingsAverage}</p>
               <p>{`(${product.ratingsQuantity})`}</p>
