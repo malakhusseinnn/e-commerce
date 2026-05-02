@@ -6,6 +6,7 @@ import { FaArrowRotateLeft, FaBolt } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import { FaShareNodes } from "react-icons/fa6";
 import { FaTruckFast } from "react-icons/fa6";
+import AddToWishlistBtn from "@/app/_components/AddToWishlistBtn/AddToWishlistBtn";
 
 export default async function Productdetails(props: {
   params: Promise<{ id: string }>;
@@ -104,10 +105,7 @@ export default async function Productdetails(props: {
 
                   <div className="my-5 flex flex-wrap items-center">
                     <div className="p-2 w-11/12">
-                      <button className="flex w-full gap-2 justify-center items-center border-2 border-[#E5E7EB] p-3 rounded-lg hover:cursor-pointer hover:border-[#8AF0AF] hover:text-[#16A34A] transition-all duration-300  text-medium">
-                        <FaRegHeart />
-                        Add to Wishlist
-                      </button>
+                    <AddToWishlistBtn productId = {product?._id || ''} content = {<> <FaRegHeart /> Add to Wishlist </>} style = 'flex w-full gap-2 justify-center items-center border-2 border-[#E5E7EB] p-3 rounded-lg hover:cursor-pointer hover:border-[#8AF0AF] hover:text-[#16A34A] transition-all duration-300  text-medium'/>
                     </div>
                     <div className="p-2 w-1/12">
                       <div className="flex justify-center items-center border-2 border-[#E5E7EB] p-3 rounded-lg hover:cursor-pointer hover:border-[#8AF0AF] hover:text-[#16A34A] transition-all duration-300 ">

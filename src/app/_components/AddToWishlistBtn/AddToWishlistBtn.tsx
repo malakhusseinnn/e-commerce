@@ -1,14 +1,14 @@
 "use client";
 import { addToWishlist } from "@/actions/wishlist.actions";
 import { WishlistContext } from "@/context/wishlistContext";
-import { useContext, useState } from "react";
+import { ReactNode, useContext, useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { toast } from "sonner";
 
-export default function AddToWishlistBtn({ productId }: { productId: string }) {
+export default function AddToWishlistBtn({ productId , content , style }: { productId: string , content: ReactNode , style:string }) {
   const [isLoading, setIsLoading] = useState(false);
   const { numberOfWishlistItems, setNumberOfWishlistItems } = useContext(WishlistContext);
-  async function AddToWishlistFun() {
+    async function AddToWishlistFun() {
     setIsLoading(true);
     const res = await addToWishlist(productId);
     if (res.status === "success") {
@@ -19,7 +19,7 @@ export default function AddToWishlistBtn({ productId }: { productId: string }) {
       setIsLoading(false);
       setNumberOfWishlistItems(numberOfWishlistItems + 1);
     } else {
-      toast.error("Can't add to wishlist righ now!", {
+      toast.error("Can't add to wishlist righ now! Login First🚫", {
         position: "top-center",
         duration: 2000,
       });
@@ -30,10 +30,10 @@ export default function AddToWishlistBtn({ productId }: { productId: string }) {
   return (
     <div
       onClick={AddToWishlistFun}
-      className="size-8 rounded-full bg-white shadow-sm flex justify-center items-center text-md text-[#4A5565] hover:text-[#FB2C36] transition-all duration-300 cursor-pointer"
+      className={style}
       title="Add to wishlist"
     >
-      <FaRegHeart />
+      {content}
     </div>
   );
 }
