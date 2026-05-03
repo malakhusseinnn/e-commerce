@@ -23,7 +23,7 @@ export default function page() {
             </div>
           </div>
         </div>
-        <p className="text-[50px] mt-8 text-[#151C2C] font-extrabold">
+        <p className="lg:text-[50px] text-4xl mt-8 text-[#151C2C] font-extrabold">
           Oops! Nothing Here
         </p>
         <p className="text-[#4A5565] font-semibold max-w-100 text-center mt-2 mb-8">
@@ -34,7 +34,7 @@ export default function page() {
         <div className="flex items-start gap-3">
           <Link
             href="/"
-            className="bg-[#16A34A] text-white font-bold px-6 py-4 rounded-lg hover:-translate-y-2 hover:shadow-md hover:shadow-[#16A34A]/50 transition-all duration-300 flex items-center gap-2"
+            className="bg-[#16A34A] text-white text-sm md:text-lg font-bold px-6 py-4 rounded-lg hover:-translate-y-2 hover:shadow-md hover:shadow-[#16A34A]/50 transition-all duration-300 flex items-center gap-2"
           >
             <IoMdHome className="text-2xl" />
             Go to Home Page
@@ -42,7 +42,7 @@ export default function page() {
 
           <button
             onClick={goBack}
-            className="group text-[#4A5565] font-semibold bg-white py-4 px-6 flex items-center shadow-lg shadow-gray-300 border border-gray-200/50 gap-2 rounded-xl hover:-translate-y-2 hover:shadow-md hover:shadow-[#6EE599]/50 transition-all duration-300"
+            className="group text-[#4A5565] text-sm md:text-lg font-semibold bg-white py-4 px-6 flex items-center shadow-lg shadow-gray-300 border border-gray-200/50 gap-2 rounded-xl hover:-translate-y-2 hover:shadow-md hover:shadow-[#6EE599]/50 transition-all duration-300"
           >
             <FaArrowLeftLong className="group-hover:-translate-x-2 transition-all duration-300" />{" "}
             Go Back
@@ -54,7 +54,7 @@ export default function page() {
             Popular Destinations
           </p>
 
-          <div className="mt-2 flex items-center gap-4">
+          <div className="mt-2 flex flex-col lg:flex-row items-center gap-4">
             <Link href="/shop" className="bg-[#F0FDF4] px-3 py-2 rounded-lg text-[#126e34] font-semibold hover:bg-[#DCFCE7] transition-all duration-300">
             All Products
             </Link>
