@@ -78,8 +78,8 @@ export default function checkout() {
 
   return (
     <>
-      <div className="w-full lg:w-[90%] mx-auto mt-12">
-        <div className="flex justify-between items-center">
+      <div className="w-[98%] lg:w-[90%] mx-auto mt-12">
+        <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 items-center">
               <div className="flex items-center justify-center rounded-lg size-13 bg-[#16A34A] text-white text-4xl">
