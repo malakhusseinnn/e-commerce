@@ -128,8 +128,8 @@ export default function Support() {
 
               <div className="mt-12">
                 <form className="flex flex-col gap-6">
-                  <div className="flex gap-2">
-                    <div className="flex flex-col gap-2 w-1/2 p-1">
+                  <div className="flex flex-col lg:flex-row gap-2">
+                    <div className="flex flex-col gap-2 lg:w-1/2 p-1">
                       <label htmlFor="fullName" className="text-sm">
                         Full Name
                       </label>
@@ -139,7 +139,7 @@ export default function Support() {
                         placeholder="John Doe"
                       />
                     </div>
-                    <div className="flex flex-col gap-2 w-1/2 p-1">
+                    <div className="flex flex-col gap-2 lg:w-1/2 p-1">
                       <label htmlFor="fullName" className="text-sm">
                         Email Address
                       </label>
@@ -198,8 +198,16 @@ export default function Support() {
               </div>
               <div className="flex flex-col gap-2">
                 <p className="font-semibold">Looking for quick answers?</p>
-                <p className="text-sm">Check out our Help Center for frequently asked questions about orders, shipping, returns, and more.</p>
-                <Link href="/notfound" className="text-[#16A34A] hover:underline w-max text-sm">Visit Help Center →</Link>
+                <p className="text-sm">
+                  Check out our Help Center for frequently asked questions about
+                  orders, shipping, returns, and more.
+                </p>
+                <Link
+                  href="/notfound"
+                  className="text-[#16A34A] hover:underline w-max text-sm"
+                >
+                  Visit Help Center →
+                </Link>
               </div>
             </div>
           </div>

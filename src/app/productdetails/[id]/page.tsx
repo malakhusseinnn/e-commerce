@@ -85,7 +85,7 @@ export default async function Productdetails(props: {
                   <div className="flex items-center flex-wrap my-5">
                     <div className="p-2 w-1/2">
                       <AddBTN
-                        classes="w-full p-3 hover:cursor-pointer hover:bg-[#15803D] transition-all duration-200 justify-center rounded-lg bg-[#16A34A] text-white text-bold flex items-center gap-2"
+                        classes="w-full text-md md:text-lg p-3 hover:cursor-pointer hover:bg-[#15803D] transition-all duration-200 justify-center rounded-lg bg-[#16A34A] text-white text-bold flex items-center gap-2"
                         word={
                           <>
                             <FaShoppingCart />
