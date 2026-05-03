@@ -14,7 +14,7 @@ export default function FirstNav() {
     <>
       <div className=" border-b border-[#E5E7EB]">
         <div className="flex flex-col gap-2 xl:justify-between xl:flex-row items-center py-2 px-3 md:w-[80%] mx-auto">
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center flex-col md:flex-row">
             <div className="flex gap-2 items-center">
               <FaTruck className="text-[#16A34A]" />
               <p className="text-[#6A7282] font-semibold text-sm">
@@ -29,7 +29,7 @@ export default function FirstNav() {
             </div>
           </div>
           <div className="gap-4 items-center flex flex-col md:justify-between md:flex-row">
-            <div className="flex gap-3 items-center border-e-2 border-[#E5E7EB] pe-4">
+            <div className="flex flex-col md:flex-row gap-3 items-center border-e-2 border-[#E5E7EB] pe-4">
               <div className="flex gap-2 items-center text-sm text-[#6A7282] font-semibold hover:cursor-pointer hover:text-[#16A34A] transition-all">
                 <FaPhoneAlt />
                 <p>+1 (800) 123-4567</p>

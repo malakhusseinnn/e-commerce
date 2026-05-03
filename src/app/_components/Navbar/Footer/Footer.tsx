@@ -279,7 +279,7 @@ export default function Footer() {
 
           {/* {footer bottom section} */}
           <div className="border-t border-[#6A7282]/25 pt-3 flex justify-center items-center mt-6">
-            <div className="flex justify-between items-center w-[80%] text-[#6A7282]">
+            <div className="flex flex-col lg:flex-row justify-between items-center w-[80%] text-[#6A7282]">
               <p>© 2026 FreshCart. All rights reserved.</p>
               <div className="flex gap-4 items-center">
                 <div className="flex gap-2 items-center">
