@@ -20,7 +20,7 @@ export default async function Productdetails(props: {
     <>
       <div className="w-full xl:w-[80%] lg:w-[90%] mx-auto mt-12">
         <div className="flex flex-col lg:flex-row flex-wrap relative">
-          <div className="p-2 w-1/4 sticky self-start top-14">
+          <div className="p-2 w-[95%] mx-auto xl:mx-0 xl:w-1/4 xl:sticky self-start top-14">
             <div className="bg-white shadow-md border rounded-xl">
               <img
                 src={product?.imageCover}
@@ -30,7 +30,7 @@ export default async function Productdetails(props: {
             </div>
           </div>
 
-          <div className="w-3/4 ">
+          <div className="w-[95%] mx-auto xl:mx-0 xl:w-3/4 ">
             <div className="p-2">
               <div className=" bg-white shadow-md border rounded-xl p-5">
                 <div className="border-b border-gray-300/25 pb-6  flex flex-col gap-4">
@@ -107,7 +107,7 @@ export default async function Productdetails(props: {
                     <div className="p-2 w-11/12">
                     <AddToWishlistBtn productId = {product?._id || ''} content = {<> <FaRegHeart /> Add to Wishlist </>} style = 'flex w-full gap-2 justify-center items-center border-2 border-[#E5E7EB] p-3 rounded-lg hover:cursor-pointer hover:border-[#8AF0AF] hover:text-[#16A34A] transition-all duration-300  text-medium'/>
                     </div>
-                    <div className="p-2 w-1/12">
+                    <div className="hidden md:block p-2 w-1/12">
                       <div className="flex justify-center items-center border-2 border-[#E5E7EB] p-3 rounded-lg hover:cursor-pointer hover:border-[#8AF0AF] hover:text-[#16A34A] transition-all duration-300 ">
                         <FaShareNodes className="text-xl" />
                       </div>
@@ -115,7 +115,7 @@ export default async function Productdetails(props: {
                   </div>
                 </div>
 
-                <div className="my-6 flex justify-between items-center px-4">
+                <div className="my-6 flex flex-col gap-3 md:flex-row justify-between items-center px-4">
                   <div className="flex gap-3 items-center">
                     <div className="rounded-full size-10 text-[#16A34A] bg-[#DCFCE7] text-xl flex items-center justify-center">
                       <FaTruckFast />
